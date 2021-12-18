@@ -73,56 +73,35 @@ Como alterei a estrutura do desafio, tive que alterar alguns métodos e criar no
 Para realização dos testes eu utilizei o <b>Postman</b> como REST client, para enviar requisições e testar todas as funções da aplicação. Segue abaixo um print de todos os métodos em funcionamento.
 
 - <b>POST</b> - Cadastrar Cliente
-<p align="center">
-<img src="imagens/cadastrar_cliente.PNG" width="300">
-</p>
+<img src="imagens/cadastrar_cliente.PNG">
 
 - <b>GET</b> - Mostrar Clientes
-<p align="center">
-<img src="imagens/show_clients.PNG" width="300">
-</p>
+<img src="imagens/show_clients.PNG">
 
 - <b>PUT</b> - Atualizar Cadastro do Cliente
-<p align="center">
-<img src="imagens/update_cliente.PNG" width="300">
-</p>
+<img src="imagens/update_cliente.PNG">
 
 - <b>DEL</b> - Excluir Cliente
-<p align="center">
-<img src="imagens/remove_cliente.PNG" width="300">
-</p>
+<img src="imagens/remove_cliente.PNG">
+
 
 - <b>GET</b> - Pesquisar Cliente
-<p align="center">
-<img src="imagens/get_cliente.PNG" width="300">
-</p>
+<img src="imagens/get_cliente.PNG">
 
 - <b>POST</b> - Cadastrar Veículo
-<p align="center">
-<img src="imagens/cadastrar_veiculo.PNG" width="300">
-</p>
+<img src="imagens/cadastrar_veiculo.PNG">
 
 - <b>GET</b> - Mostrar Veículos
-<p align="center">
-<img src="imagens/show_veiculos.PNG" width="300">
-</p>
+<img src="imagens/show_veiculos.PNG">
 
 - <b>GET</b> - Mostrar Veículos do Cliente
-<p align="center">
-<img src="imagens/show_veiculos_cliente.PNG" width="300">
-</p>
+<img src="imagens/show_veiculos_cliente.PNG">
 
 - <b>PUT</b> - Alterar dados do Veículo
-<p align="center">
-<img src="imagens/update_veiculo.PNG" width="300">
-</p>
+<img src="imagens/update_veiculo.PNG">
 
 - <b>DEL</b> - Excluir Veículo
-<p align="center">
-<img src="imagens/remove_veiculo.PNG" width="300">
-</p>
+<img src="imagens/remove_veiculo.PNG">
 
 - <b>GET</b> - Consultar Placa
-<p align="center">
-<img src="imagens/consulta_placa.PNG" width="300">
-</p>
+<img src="imagens/consulta_placa.PNG">
