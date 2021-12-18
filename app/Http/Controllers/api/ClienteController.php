@@ -15,6 +15,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
+        echo("Clientes cadastrados: ");
         return Cliente::all();
     }
 
@@ -26,7 +27,9 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        Cliente::create($request->all());
+        $cliente = Cliente::create($request->all());
+        $cliente->save();
+        echo($cliente);
         return ("Cliente cadastrado com sucesso");
     }
 
@@ -52,7 +55,7 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::findOrFail($id);
         $cliente->update($request->all());
-        return ("Cadastro do cliente atualizado com sucesso");
+        return ("Cadastro do cliente: $cliente->nome atualizado com sucesso");
     }
 
     /**
@@ -64,6 +67,7 @@ class ClienteController extends Controller
     public function destroy($id)
     {
         $cliente = Cliente::findOrFail($id);
+        echo($cliente);
         $cliente->delete();
         return ("Cliente removido dos registros");
     }
