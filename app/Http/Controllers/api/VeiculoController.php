@@ -10,39 +10,45 @@ use App\Models\Cliente;
 class VeiculoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Mostra todos os veículos cadastrados.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return Veiculo::all();
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Cadastra o veículo do cliente.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        Veiculo::create($request->all());
+    public function store(Request $request, $id_cliente)
+    {  
+        $veiculo = new Veiculo();
+
+        $cliente = Cliente::find($id_cliente);
+
+        $veiculo->id_cliente = $cliente->id;
+        $veiculo->placa = $request->placa;
+        $veiculo->save();
     }
 
     /**
-     * Display the specified resource.
+     * Mostra o veículo.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        return Veiculo::findOrFail($id);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Atualiz as informações do veículo.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -50,17 +56,20 @@ class VeiculoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $veiculo = Veiculo::findOrFail($id);
+        $veiculo->placa = $request->placa;
+        $veiculo->save();
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove o veículo dos registros.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $veiculo = Cliente::findOrFail($id);
+        $veiculo->delete();
     }
 }
