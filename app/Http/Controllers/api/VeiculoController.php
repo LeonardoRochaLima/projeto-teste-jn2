@@ -16,8 +16,12 @@ class VeiculoController extends Controller
      */
     public function index()
     {
-        echo("Todos os Veículos do Cadastrados: ");
-        return Veiculo::all();
+        $veiculos = Veiculo::all();
+        if(!$veiculos->count()){
+            return ("Nenhum veículo cadastrado.");
+        }
+        echo("Todos os Veículos do Cadastrados: \n");
+        return $veiculos;
     }
 
     /**
@@ -36,8 +40,8 @@ class VeiculoController extends Controller
         $veiculo->nome_cliente = $cliente->nome;
         $veiculo->placa = $request->placa;
         $veiculo->save();
-        echo($veiculo);
-        return ("Veículo cadastrado com sucesso");
+        echo("$veiculo \n");
+        return ("Veículo cadastrado com sucesso!!");
     }
 
     /**
@@ -47,7 +51,7 @@ class VeiculoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function veiculos(Cliente $cliente){
-        echo("Todos os Veículos do Cliente: $cliente->nome");
+        echo("Todos os Veículos do Cliente: $cliente->nome \n");
         return $cliente->veiculos;
     }
 
@@ -74,8 +78,8 @@ class VeiculoController extends Controller
         $veiculo = Veiculo::findOrFail($id);
         $veiculo->placa = $request->placa;
         $veiculo->save();
-        echo($veiculo);
-        return ("Cadastro do veículo atualizado com sucesso");
+        echo("$veiculo \n");
+        return ("Cadastro do veículo atualizado com sucesso!!");
     }
 
     /**
@@ -87,9 +91,9 @@ class VeiculoController extends Controller
     public function destroy($id)
     {
         $veiculo = Veiculo::findOrFail($id);
-        echo($veiculo);
+        echo("$veiculo \n");
         $veiculo->delete();
-        return ("Veículo removido dos registros");
+        return ("Veículo removido dos registros!!");
     }
 
     /**
@@ -104,9 +108,9 @@ class VeiculoController extends Controller
             ['placa', 'LIKE', "%{$numero}"],
         ])->get();
         if(!$veiculos->count()){
-            return ("Nenhuma placa encontrada com este número final");
+            return ("Nenhuma placa encontrada com este número final.");
         }
-        echo("Placas encontradas, com o final: $numero");
+        echo("Placas encontradas, com o final: $numero \n");
         return $veiculos;
     }
 }

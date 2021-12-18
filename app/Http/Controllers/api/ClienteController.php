@@ -15,8 +15,12 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        echo("Clientes cadastrados: ");
-        return Cliente::all();
+        $clientes = Cliente::all();
+        if(!$clientes->count()){
+            return ("Nenhum cliente cadastrado.");
+        }
+        echo("Clientes cadastrados: \n");
+        return $clientes;
     }
 
     /**
@@ -29,8 +33,8 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::create($request->all());
         $cliente->save();
-        echo($cliente);
-        return ("Cliente cadastrado com sucesso");
+        echo("$cliente \n");
+        return ("Cliente cadastrado com sucesso!!");
     }
 
     /**
@@ -67,7 +71,7 @@ class ClienteController extends Controller
     public function destroy($id)
     {
         $cliente = Cliente::findOrFail($id);
-        echo($cliente);
+        echo("$cliente \n");
         $cliente->delete();
         return ("Cliente removido dos registros");
     }

@@ -66,8 +66,24 @@ Como alterei a estrutura do desafio, tive que alterar alguns métodos e criar no
 | DEL | /consulta/final-placa/{numero} |    Remove o veículo dos registros. |
 | GET | /consulta/final-placa/{numero} |    Consulta de todos os veículos cadastrados na base, onde o último número da placa do carro é igual ao informado. |
 
-#### Testes da Aplicação
+### Testes da Aplicação
 <p align="center">
 <img src="imagens/postman.png" width="300">
 </p>
-Para realização dos testes eu utilizei o <b>Postman</b> como REST client, para enviar requisições e testar a aplicação.
+Para realização dos testes eu utilizei o <b>Postman</b> como REST client, para enviar requisições e testar todas as funções da aplicação. Segue abaixo um print de todos os métodos em funcionamento.
+
+- <b>POST</b> - Cadastrar Cliente
+<p align="center">
+<img src="imagens/postman.png" width="300">
+</p>
+
+- <b>GET</b> - Mostrar Clientes
+- <b>PUT</b> - Atualizar Cadastro do Cliente
+- <b>DEL</b> - Excluir Cliente
+- <b>GET</b> - Pesquisar Cliente
+- <b>POST</b> - Cadastrar Veículo
+- <b>GET</b> - Mostrar Veículos
+- <b>GET</b> - Mostrar Veículos do Cliente
+- <b>PUT</b> - Alterar dados do Veículo
+- <b>DEL</b> - Excluir Veículo
+- <b>GET</b> - Consultar Placa
