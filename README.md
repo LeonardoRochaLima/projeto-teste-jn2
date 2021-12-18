@@ -74,16 +74,55 @@ Para realização dos testes eu utilizei o <b>Postman</b> como REST client, para
 
 - <b>POST</b> - Cadastrar Cliente
 <p align="center">
-<img src="imagens/postman.png" width="300">
+<img src="imagens/cadastrar_cliente.PNG" width="300">
 </p>
 
 - <b>GET</b> - Mostrar Clientes
+<p align="center">
+<img src="imagens/show_clients.PNG" width="300">
+</p>
+
 - <b>PUT</b> - Atualizar Cadastro do Cliente
+<p align="center">
+<img src="imagens/update_cliente.PNG" width="300">
+</p>
+
 - <b>DEL</b> - Excluir Cliente
+<p align="center">
+<img src="imagens/remove_cliente.PNG" width="300">
+</p>
+
 - <b>GET</b> - Pesquisar Cliente
+<p align="center">
+<img src="imagens/get_cliente.PNG" width="300">
+</p>
+
 - <b>POST</b> - Cadastrar Veículo
+<p align="center">
+<img src="imagens/cadastrar_veiculo.PNG" width="300">
+</p>
+
 - <b>GET</b> - Mostrar Veículos
+<p align="center">
+<img src="imagens/show_veiculos.PNG" width="300">
+</p>
+
 - <b>GET</b> - Mostrar Veículos do Cliente
+<p align="center">
+<img src="imagens/show_veiculos_cliente.PNG" width="300">
+</p>
+
 - <b>PUT</b> - Alterar dados do Veículo
+<p align="center">
+<img src="imagens/update_veiculo.PNG" width="300">
+</p>
+
 - <b>DEL</b> - Excluir Veículo
+<p align="center">
+<img src="imagens/remove_veiculo.PNG" width="300">
+</p>
+
 - <b>GET</b> - Consultar Placa
+<p align="center">
+<img src="imagens/consulta_placa.PNG" width="300">
+</p>
