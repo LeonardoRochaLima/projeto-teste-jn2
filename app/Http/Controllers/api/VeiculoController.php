@@ -99,7 +99,7 @@ class VeiculoController extends Controller
             ['placa', 'LIKE', "%{$numero}"],
         ])->get();
         if(!$veiculos->count()){
-            return ("Nenhuma placa de veículo encontrado com este número final");
+            return ("Nenhuma placa encontrada com este número final");
         }
         return $veiculos;
     }
