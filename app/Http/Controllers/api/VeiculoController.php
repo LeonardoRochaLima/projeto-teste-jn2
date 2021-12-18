@@ -32,8 +32,14 @@ class VeiculoController extends Controller
         $cliente = Cliente::find($id_cliente);
 
         $veiculo->id_cliente = $cliente->id;
+        $veiculo->nome_cliente = $cliente->nome;
         $veiculo->placa = $request->placa;
         $veiculo->save();
+        return ("Veículo cadastrado com sucesso");
+    }
+
+    public function veiculos(Cliente $cliente){
+        return $cliente->veiculos;
     }
 
     /**
@@ -59,6 +65,7 @@ class VeiculoController extends Controller
         $veiculo = Veiculo::findOrFail($id);
         $veiculo->placa = $request->placa;
         $veiculo->save();
+        return ("Cadastro do veículo atualizado com sucesso");
     }
 
     /**
@@ -69,7 +76,8 @@ class VeiculoController extends Controller
      */
     public function destroy($id)
     {
-        $veiculo = Cliente::findOrFail($id);
+        $veiculo = Veiculo::findOrFail($id);
         $veiculo->delete();
+        return ("Veículo removido dos registros");
     }
 }

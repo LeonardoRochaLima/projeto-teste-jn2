@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('cliente', 'api\ClienteController');
-Route::apiResource('veiculo', 'api\VeiculoController');
+Route::resource('cliente', 'api\ClienteController');
+Route::resource('veiculo', 'api\VeiculoController');
 
-Route::post('cliente/{cliente}/veiculo', 'VeiculoController@store');
+Route::get('api/cliente/{cliente}/veiculos', 'VeiculoController@veiculos');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
