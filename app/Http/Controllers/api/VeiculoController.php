@@ -38,6 +38,12 @@ class VeiculoController extends Controller
         return ("Veículo cadastrado com sucesso");
     }
 
+    /**
+     * Retorna todos os veículs do cliente.
+     *
+     * @param  $cliente
+     * @return \Illuminate\Http\Response
+     */
     public function veiculos(Cliente $cliente){
         return $cliente->veiculos;
     }
@@ -79,5 +85,22 @@ class VeiculoController extends Controller
         $veiculo = Veiculo::findOrFail($id);
         $veiculo->delete();
         return ("Veículo removido dos registros");
+    }
+
+    /**
+     * Consulta de todos os veículos cadastrados na base,
+     * onde o último número da placa do carro é igual ao informado.
+     *
+     * @param  int  $numero
+     * @return \Illuminate\Http\Response
+     */
+    public function consultaPlaca($numero){
+        $veiculos = Veiculo::where([
+            ['placa', 'LIKE', "%{$numero}"],
+        ])->get();
+        if(!$veiculos->count()){
+            return ("Nenhuma placa de veículo encontrado com este número final");
+        }
+        return $veiculos;
     }
 }
